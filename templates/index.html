@@ -1,7 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  This is my blog made with Zola.
-</h1>
+<div class="title-box">
+    <h1>
+        Collin Werth
+    </h1>
+    <div class="social-box">
+        {% set image = resize_image(path="/images/github.png", width=40, height=40, op="scale") %}
+        <a href="https://github.com/b3atz">
+            <img src="{{ image.url }}" alt="link to github"/>
+        </a>
+        {% set image = resize_image(path="/images/linkedin.png", width=40, height=40, op="scale") %}
+        <a href="https://www.linkedin.com/in/collin-werth/">
+            <img src="{{ image.url }}" alt="link to linkedin" />
+        </a>
+        {% set image = resize_image(path="/images/instagram.png", width=40, height=40, op="scale") %}
+        <a href="https://www.instagram.com/c4werth/">
+            <img src="{{ image.url }}" alt="link to instagram"/>
+        </a>
+        {% set image = resize_image(path="/images/email.png", width=40, height=40, op="scale") %}
+        <a href="example.org">
+            <img src="{{ image.url }}" alt="link to email form"/>
+        </a>
+    </div>
+</div>
 {% endblock content %}
