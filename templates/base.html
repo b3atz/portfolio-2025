@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="space-grotesk-default">
+  <div class="header">
+    <ul class="nav-links">
+      <li style="float: left"><a href="{{ get_url(path='') }}">home</a></li>
+      <li><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a></li>
+      <li><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a></li>
+    </ul>
+  </div>
+      <button onclick="lightMode()">Toggle dark mode</button>
+  <section class="section">
+    <div class="main-content">
+      {% block content %} {% endblock content %}
+    </div>
+  </section>
+  <script>
+    function lightMode(){
+      var element = document.body;
+      if(element.classList.contains("dark")){
+        element.classList.remove("dark");
+        element.classList.add("light")
+        localStorage.setItem("theme", "light");
+      }else if(element.classList.contains("light")){
+        element.classList.remove("light");
+        element.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }else {
+        //using fallback dark theme
+        element.classList.add("dark")
+      }
+    }
+    function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+      if (localStorageTheme !== null) {
+        return localStorageTheme;
+      }
+      if (systemSettingDark.matches) {
+        return "dark";
+      }
+      return "light";
+    }
+    const localStorageTheme = localStorage.getItem("theme");
+    const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+    let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+    document.body.classList.add(currentThemeSetting);
+  </script>
+</body>
+
+</html>

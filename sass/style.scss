@@ -1,0 +1,50 @@
+// #e6cea0
+//
+//
+
+$light-background: #ffffff;
+$light-color: #000000;
+$dark-background: #000000;
+$dark-color: #ffffff;
+:root {
+    color-scheme: light dark;
+    --light-bg: snow;
+    --light-color: black;
+    --dark-bg: black;
+    --dark-color: snow;
+}
+.light {
+    color-scheme: light;
+}
+.dark {
+    color-scheme: dark;
+}
+
+body {
+    max-width: 50%;
+    background-color: light-dark(var(--light-bg),var(--dark-bg));
+    margin: auto;
+    color: light-dark(var(--light-color),var(--dark-color));
+}
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.nav-links > li {
+    float: right;
+}
+.nav-links > li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: light-dark(var(--light-color),var(--dark-color));
+}
+.space-grotesk-default {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
