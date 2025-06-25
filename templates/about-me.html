@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ section.title }}
+</h1>
+<div>
+    <p>
+        My name is Colin Werth, and I’m a recent graduate of Portland State University (Class of 2025). I’m currently based in the Los Angeles area and actively seeking opportunities to contribute to innovative software development teams.
+        <br><br>
+        During my time at PSU, I volunteered with the Computer Action Team (CAT), a student-led IT organization supporting campus infrastructure while hosting industry-led tech talks. In addition to my volunteering, I was involved in extracurricular groups like the Web Development Team and the Volunteer Management Team. I’ve also participated in academic research and am currently building a full-stack application called Motion-Controlled Baseball Simulator.
+        <br><br>
+        Outside of coding, I enjoy video games, running, and exploring the intersection of tech, sports, music, and film. I take pride in being a lifelong learner—whether that means digging into the history of a programming paradigm or the traditions of a creative art form.
+        <br><br>
+        One of my proudest accomplishments is becoming a Division I cross-country and track athlete. I started as one of the slowest runners on my high school team, but through persistence and discipline, I rose to compete at the collegiate level.
+        <br><br>
+        I'm excited to begin the next chapter of my career and bring my passion, curiosity, and determination to the software industry.
+    </p>
+</div>
+<h2>
+    Education
+</h2>
+<h2>
+    Experince
+</h2>
+<h2>
+    Projects
+</h2>
+<ul>
+  {% for page in section.pages %}
+  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock content %}
