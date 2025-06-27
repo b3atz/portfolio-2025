@@ -5,6 +5,8 @@
   {{ section.title }}
 </h1>
 <div>
+    <!-- TODO Rewrite -->
+    <!-- TODO New Picture -->
     <p>
         My name is Colin Werth, and I’m a recent graduate of Portland State University (Class of 2025). I’m currently based in the Los Angeles area and actively seeking opportunities to contribute to innovative software development teams.
         <br><br>
@@ -62,12 +64,10 @@
         <li>Collaborated on production-level web applications, incorporated user and peer feedback, optimized documentation workflows, and engaged in structured code reviews to maintain code quality.</li>
     </ul>
 </section>
-<div class="w3-container">
+<div>
     <h2>
         Projects
     </h2>
-
-
     <div class="w3-content" style="max-width:800px">
     {% for page in section.pages %}
         {% for asset in page.assets -%}
@@ -90,40 +90,37 @@
         </div>
         {% endfor %}
     </div>
-
+    <!-- TODO make buttons better -->
     <div class="w3-center">
-    <div class="w3-section">
-        <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-        <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+        <div class="w3-section">
+            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+        </div>
     </div>
 </div>
 
 <script>
 var slideIndex = 1;
-showDivs(slideIndex);
+    showDivs(slideIndex);
 
 function plusDivs(n) {
-  showDivs(slideIndex += n);
+    showDivs(slideIndex += n);
 }
 
 function currentDiv(n) {
-  showDivs(slideIndex = n);
+    showDivs(slideIndex = n);
 }
 
 function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-red", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-red";
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }  
+    x[slideIndex-1].style.display = "flex";  
 }
 </script>
 
