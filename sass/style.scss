@@ -101,3 +101,18 @@ a {
 .social-box > a {
     padding-left: 10px;
 }
+.project-box {
+    margin: 5%;
+    border-bottom: 3px solid var(--dark-accent);
+    display: flex;
+}
+#project-box-image {
+    border-right: 3px solid var(--dark-accent);
+    margin-right: 5px;
+}
+
+.course-list {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+    gap: 10px;
+}
