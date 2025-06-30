@@ -17,39 +17,63 @@
       <li style="float: left"><a href="{{ get_url(path='') }}">home</a></li>
       <li><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a></li>
       <li><a href="{{ get_url(path='@/about-me/_index.md') }}">About me</a></li>
+      <li>
+        <a onclick="lightMode()"> Dark mode toggle
+        </a>
+      </li>
     </ul>
   </div>
-      <button onclick="lightMode()">Toggle dark mode</button>
   <section class="section">
     <div class="main-content">
       {% block content %} {% endblock content %}
     </div>
   </section>
   <script>
-    function lightMode(){
+    function lightMode() {
       var element = document.body;
-      if(element.classList.contains("dark")){
-        element.classList.remove("dark");
-        element.classList.add("light")
-        localStorage.setItem("theme", "light");
-      }else if(element.classList.contains("light")){
-        element.classList.remove("light");
-        element.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }else {
-        //using fallback dark theme
-        element.classList.add("dark")
+      if (element.classList.contains("dark")) {
+          element.classList.remove("dark");
+          element.classList.add("light");
+          localStorage.setItem("theme", "light");
+      } else if (element.classList.contains("light")) {
+          element.classList.remove("light");
+          element.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+      } else {
+          // Using fallback dark theme
+          element.classList.add("dark");
       }
     }
+
     function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
-      if (localStorageTheme !== null) {
-        return localStorageTheme;
-      }
-      if (systemSettingDark.matches) {
-        return "dark";
-      }
-      return "light";
+        if (localStorageTheme !== null) {
+            return localStorageTheme;
+        }
+        if (systemSettingDark.matches) {
+            return "dark";
+        }
+        return "light";
     }
+
+    function myFunction() {
+        var dropdown = document.querySelector(".dropdown-content");
+        dropdown.classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn') && !event.target.matches('.dropdown-content')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    // Check the theme on page load
     const localStorageTheme = localStorage.getItem("theme");
     const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
     let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
