@@ -8,7 +8,7 @@
     color-scheme: light dark;
     --light-bg: #d0e7f7;
     --light-color: black;
-    --dark-bg: #031724;
+    --dark-bg: #030e15;
     --dark-color: snow;
     --dark-accent: #db4646;
     --light-accent: ;
@@ -27,7 +27,7 @@ body {
     color: light-dark(var(--light-color),var(--dark-color));
 }
 a {
-    text-decoration: none;
+    text-decoration:underline;
     color: light-dark(var(--light-color),var(--dark-color));
 }
 .nav-links {
@@ -40,6 +40,7 @@ a {
     float: right;
 }
 .nav-links > li a {
+    text-decoration: none;
     display: block;
     text-align: center;
     padding: 14px 16px;
@@ -118,9 +119,9 @@ a {
     gap: 10px;
 }
 .project-button {
-    background-color: var(--dark-accent);
+    background-color: light-dark(var(--light-bg),var(--dark-bg));
     border: none;
-    color: white;
+    color: var(--dark-accent);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;

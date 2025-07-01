@@ -67,7 +67,7 @@
     <h2>
         Projects
     </h2>
-    <div class="w3-content" style="max-width:800px">
+    <div class="w3-content">
     {% for page in section.pages %}
         {% for asset in page.assets -%}
         {%- if asset is matching("[.](jpg|png)$") -%}
@@ -94,7 +94,7 @@
     <div>
         <div>
             <button class="project-button" onclick="plusDivs(-1)">❮ Prev</button>
-            <button class="project-button" onclick="plusDivs(1)">Next ❯</button>
+            <button class="project-button" onclick="plusDivs(1)" style="float: right;">Next ❯</button>
         </div>
     </div>
 </div>
