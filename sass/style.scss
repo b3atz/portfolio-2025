@@ -6,12 +6,12 @@
 
 :root {
     color-scheme: light dark;
-    --light-bg: #d0e7f7;
+    --light-bg: #e0f1fe;
     --light-color: black;
     --dark-bg: #030e15;
     --dark-color: snow;
-    --dark-accent: #db4646;
-    --light-accent: ;
+    --dark-accent: #0090ab;
+    --light-accent: #095786;
 }
 .light {
     color-scheme: light;
@@ -62,7 +62,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #db4646;
+    background: light-dark(var(--light-accent),var(--dark-accent));
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -94,7 +94,7 @@ a {
 }
 .title-box > h1 {
     text-align: center;
-    border-bottom: 3px solid var(--dark-accent);
+    border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
 }
 .social-box {
     justify-content: space-between;
@@ -105,11 +105,11 @@ a {
 }
 .project-box {
     margin: 5%;
-    border-bottom: 3px solid var(--dark-accent);
+    border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
     display: flex;
 }
 #project-box-image {
-    border-right: 3px solid var(--dark-accent);
+    border-right: 3px solid light-dark(var(--light-accent),var(--dark-accent));
     margin-right: 5px;
 }
 
@@ -121,12 +121,12 @@ a {
 .project-button {
     background-color: light-dark(var(--light-bg),var(--dark-bg));
     border: none;
-    color: var(--dark-accent);
+    color: light-dark(var(--light-accent),var(--dark-accent));
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
 }
 blockquote > * {
-    border-left: 3px solid var(--dark-accent);
+    border-left: 3px solid light-dark(var(--light-accent),var(--dark-accent));
 }
