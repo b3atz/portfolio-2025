@@ -92,11 +92,12 @@ a {
 }
 .title-box {
     margin: auto;
-    width: 50%;
     padding: 10px;
     padding-top: 100px;
+    justify-content: space-between;
+    display: flex;
 }
-.title-box > h1 {
+.title-box >div > h1 {
     text-align: center;
     border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
 }
