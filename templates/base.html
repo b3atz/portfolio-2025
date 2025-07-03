@@ -27,6 +27,23 @@
       {% block content %} {% endblock content %}
     </div>
   </section>
+  <footer>
+    <p>Powered by <a href="https://www.getzola.org/">Zola</a></p>
+    <div class="footer-box">
+        {% set image = resize_image(path="/images/github.png", width=20, height=20, op="scale") %}
+        <a href="https://github.com/b3atz">
+            <img src="{{ image.url }}" alt="link to github"/>
+        </a>
+        {% set image = resize_image(path="/images/linkedin.png", width=20, height=20, op="scale") %}
+        <a href="https://www.linkedin.com/in/collin-werth/">
+            <img src="{{ image.url }}" alt="link to linkedin" />
+        </a>
+        {% set image = resize_image(path="/images/email.png", width=20, height=20, op="scale") %}
+        <a href="example.org">
+            <img src="{{ image.url }}" alt="link to email form"/>
+        </a>
+    </div>
+  </footer>
   <script>
     function lightMode() {
       var element = document.body;

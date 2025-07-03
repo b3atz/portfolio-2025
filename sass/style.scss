@@ -25,9 +25,13 @@ body {
     background-color: light-dark(var(--light-bg),var(--dark-bg));
     margin: auto;
     color: light-dark(var(--light-color),var(--dark-color));
+    min-height: 100dvh; /* Or 100vh for wider browser support */
+    display: flex;
+    flex-direction: column;
 }
 a {
     text-decoration:underline;
+    text-decoration-color: light-dark(var(--light-accent),var(--dark-accent));
     color: light-dark(var(--light-color),var(--dark-color));
 }
 .nav-links {
@@ -129,4 +133,11 @@ a {
 }
 blockquote > * {
     border-left: 3px solid light-dark(var(--light-accent),var(--dark-accent));
+}
+footer{
+    margin-top: auto;
+    text-align: right;
+}
+.footer-box > a{
+    text-decoration: none;
 }
