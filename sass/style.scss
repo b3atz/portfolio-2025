@@ -142,3 +142,15 @@ footer{
 .footer-box > a{
     text-decoration: none;
 }
+pre code {
+    display: block;
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; 
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
