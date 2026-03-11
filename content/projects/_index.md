@@ -1,6 +1,6 @@
 +++
-title = "About me"
+title = "Projects"
 sort_by = "date"
-template = "about-me.html"
+template = "projects.html"
 page_template = "project.html"
 +++
