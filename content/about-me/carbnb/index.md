@@ -13,24 +13,29 @@ image = "portfolio.jpg"
 desc="CarBNB is software that would allow for users to temporally rent privately owned car chargers. This network would connect charger owners and electric car owners"
 
 +++
-
 # Carbnb
+
 Technologies and skills summary: React, git, Postman, Google Auth, Firebase, google cloud, Bash, Docker, Teamwork, Communication, Public Speaking, Agile
 
 ## Summary
+
 This project was completed during capstone, a two quarter long project course that pairs student teams and project sponsors. The process involved planning and programming phases and agile like sprints. This project provided good real word experience like self evaluations, meetings and presentations with project sponsors, and collaboration with different teams (front-end and back-end teams).
 
 ## Contributions
+
 My roll and contributions including working on the fronted, building scripting software to deploy our site to google cloud, and setting the API document in postman to create allow our front-end and back-end to communicate. One example of my work that i took pride in was calling a meeting to do a quick rundown of collaborating with git. Often times students at PSU have used git, but have not worked with collaborators in git, so i prepared some demonstrations of how to re-base and squash commits. I the team found this useful, and i believed it was a good use of time to allow everyone in our group the ability to contribute.
 
 Overall this project was a great learning experience and helped me grow as a software Engineer. Below are our project presentation and my performance reviews
 
 ## Supporting Documents
+
 ### Presentation
+
 [https://www.youtube.co/watch?v=xOoj4kk-Qec](hps://www.youtube.com/watch?v=xOoj4kk-Qec)
 
 ### Reviews
-```
+
+```text
 ===================================================
 
 Portland State University

@@ -21,8 +21,8 @@
         </div>
     </div>
     <div>
-        {% set image = resize_image(path="/images/IMG_2463.jpg", width=317, height=355, op="scale") %}
-        <img src="{{ image.url }}" alt="link to email form"/>
+        {% set image = resize_image(path="/images/IMG_2463.jpg", width=317, height=355, op="fill") %}
+        <img src="{{ image.url }}" alt="Picture of me"/>
     </div>
 </div>
 {% endblock content %}
