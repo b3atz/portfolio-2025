@@ -11,6 +11,8 @@
     --dark-color: snow;
     --dark-accent: #0090ab;
     --light-accent: #095786;
+    --dark-border: #141a1d;
+    --dark-box: #161b1e;
 }
 .light {
     color-scheme: light;
@@ -36,52 +38,56 @@ a {
 .nav-links {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
     overflow: hidden;
 }
+
 .nav-links > li {
     float: right;
+    margin-left: 15px; /* Space between buttons */
 }
+
 .nav-links > li a {
+    /* Base Button Style */
     text-decoration: none;
     display: block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 25px;
+    color: inherit;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 2px 2px 0px black;
+    
+    /* Smooth transition for the lift effect */
+    transition: all 0.2s ease;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    overflow: hidden;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
 }
-.nav-links > li a:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: light-dark(var(--light-accent),var(--dark-accent));
-    border-radius: 100%;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-}
-.nav-links > li a:hover, .nav-links > li a:focus, .nav-links > li a:active {
+
+/* Hover State - Lifts up and changes color */
+.nav-links > li a:hover, 
+.nav-links > li a:focus {
+    transform: translateY(-2px);
+    background-color: light-dark(var(--light-accent), var(--dark-accent));
     color: white;
 }
-.nav-links > li a:hover:before, .nav-links > li a:focus:before, .nav-links > li a:active:before {
-    -webkit-transform: scale(2);
-    transform: scale(2);
+
+/* Active State - Pushes down when clicked */
+.nav-links > li a:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 0px black;
+}
+
+/* Optional: Keep the 'Home' link as a simple text link */
+.nav-links > li[style*="float: left"] a {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+}
+.nav-links > li[style*="float: left"] a:hover {
+    transform: none;
+    color: light-dark(var(--light-accent), var(--dark-accent));
 }
 .space-grotesk-default {
     font-family: "Space Grotesk", sans-serif;
@@ -107,6 +113,27 @@ a {
 .social-box > a {
     padding-left: 10px;
 }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title-box {
+        flex-direction: column; 
+        align-items: center;    
+        padding-top: 50px;   
+    }
+
+    
+    .title-box > div:first-child {
+        width: 100% !important; 
+        max-width: 35rem;     
+        margin-bottom: 2rem;
+    }
+}
+.project-shadow {
+    border: 1px solid var(--dark-border);
+    border-radius: 25px;
+    background-color: var(--dark-box);
+    box-shadow: black 1px 1px;
+}
 .project-box {
     margin: 5%;
     border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
@@ -116,13 +143,78 @@ a {
     border-right: 3px solid light-dark(var(--light-accent),var(--dark-accent));
     margin-right: 5px;
 }
+@media (max-width: 768px) {
+    .project-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 10px;
+    }
 
+    #project-box-image {
+        border-right: none; 
+        border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
+        margin-right: 0;
+        margin-bottom: 15px;   
+        width: 100%;
+        height: auto;
+    }
+
+    .project-button {
+        width: 45%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+/* Container to handle button placement */
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.project-button {
+    background-color: var(--dark-box);
+    color: inherit;
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0px black; 
+}
+
+.project-button:hover {
+    transform: translateY(-2px);
+    background-color: light-dark(var(--light-accent), var(--dark-accent));
+    color: white;
+}
+
+.project-button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 0px black;
+}
+
+
+@media (max-width: 768px) {
+    .project-navigation {
+        padding: 0 10px;
+    }
+    
+    .project-button {
+        flex: 1; 
+        padding: 15px;
+    }
+}
 .course-list {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
     gap: 10px;
 }
 .project-button {
+    margin-top: 5px;
     background-color: light-dark(var(--light-bg),var(--dark-bg));
     border: none;
     color: light-dark(var(--light-accent),var(--dark-accent));

@@ -6,6 +6,8 @@
         <h1>
             Collin Werth
         </h1>
+        <!-- TODO change box -->
+        <!-- TODO make about page -->
         <div class="social-box">
             <p>
                 My name is Colin Werth, and I’m a recent graduate of Portland State University (Class of 2025). I’m currently based in Los Angeles county and actively seeking opportunities to contribute to innovative software development teams.
@@ -21,8 +23,8 @@
         </div>
     </div>
     <div>
-        {% set image = resize_image(path="/images/IMG_2463.jpg", width=317, height=355, op="fill") %}
-        <img src="{{ image.url }}" alt="Picture of me"/>
+        {% set image = resize_image(path="/images/IMG_2463.jpg", width=300, height=300, op="fill") %}
+        <img class="project-shadow" src="{{ image.url }}" alt="Picture of me"/>
     </div>
 </div>
 {% endblock content %}

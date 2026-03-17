@@ -14,12 +14,11 @@
 <body class="space-grotesk-default">
     <div class="header">
         <ul class="nav-links">
-        <li style="float: left"><a href="{{ get_url(path='') }}">Home</a></li>
-        <li><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a></li>
-        <li><a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a></li>
-        </li>
+            <li style="float: left"><a href="{{ get_url(path='') }}">Home</a></li>
+            <li><a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a></li>
+            <li><a href="{{ get_url(path='@/blog/_index.md') }}">Posts</a></li>
         </ul>
-    </div>
+    </div> 
     <section class="section">
         <div class="main-content">
         {% block content %} {% endblock content %}
@@ -28,6 +27,7 @@
     <footer>
         <p>Powered by <a href="https://www.getzola.org/">Zola</a></p>
         <div class="footer-box">
+            <!-- TODO decide on button palcement -->
             <a id="theme-toggle" onclick="lightMode()" style="cursor: pointer;"></a>
             <a href="https://github.com/b3atz">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">

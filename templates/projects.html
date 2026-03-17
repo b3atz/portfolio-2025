@@ -4,34 +4,37 @@
 <h1 class="title">
   {{ section.title }}
 </h1>
+<!-- TODO Rethink Project Display -->
 <div> 
     <div class="w3-content">
         {% for page in section.pages %}
         {% for asset in page.assets -%}
         {%- if asset is matching("[.](jpg|png)$") -%}
         {% set image = resize_image(path=asset, width=240, height=180) %}
-        <div class="project-box mySlides">
+        <div class="project-shadow mySlides">
+            <div class="project-box">
             <a href="{{ get_url(path=asset) }}" target="_blank">
                 <img  id="project-box-image" src="{{ image.url }}" />
             </a>
-            {%- endif %}
-            {%- endfor %}
-            <div >
-                <a  href="{{ page.permalink }}">
-                    <h3>{{ page.title }}</h3>
-                </a>
-                <p>
-                    {{ page.extra.desc}}
-                </p>
+                {%- endif %}
+                {%- endfor %}
+                <div >
+                    <a  href="{{ page.permalink }}">
+                        <h3>{{ page.title }}</h3>
+                    </a>
+                    <p>
+                        {{ page.extra.desc}}
+                    </p>
+                </div>
             </div>
         </div>
             {% endfor %}
     </div>
         <!-- TODO make buttons better -->
     <div>
-        <div>
+        <div class="project-navigation">
             <button class="project-button" onclick="plusDivs(-1)">❮ Prev</button>
-            <button class="project-button" onclick="plusDivs(1)" style="float: right;">Next ❯</button>
+            <button class="project-button" onclick="plusDivs(1)">Next ❯</button>
         </div>
     </div>
 </div>
