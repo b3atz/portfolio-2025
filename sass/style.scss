@@ -13,6 +13,7 @@
     --light-accent: #095786;
     --dark-border: #141a1d;
     --dark-box: #161b1e;
+    --light-box: #d7ebf7;
 }
 .light {
     color-scheme: light;
@@ -131,7 +132,7 @@ a {
 .project-shadow {
     border: 1px solid var(--dark-border);
     border-radius: 25px;
-    background-color: var(--dark-box);
+    background-color: light-dark(var(--light-box),var(--dark-box));
     box-shadow: black 1px 1px;
 }
 .project-box {
@@ -175,7 +176,7 @@ a {
 }
 
 .project-button {
-    background-color: var(--dark-box);
+    background-color: light-dark(var(--light-box),var(--dark-box));
     color: inherit;
     border: 1px solid var(--dark-border);
     border-radius: 12px;
@@ -244,4 +245,29 @@ pre code {
     font-size: 0.9em;
     line-height: 1.5;
     white-space: pre-wrap;
+}
+/* Container for the image and icons */
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    gap: 15px;           /* Adds space between image and icons */
+}
+
+/* Horizontal layout for the icons */
+.profile-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;           /* Spacing between individual icons */
+}
+
+/* Optional: Make the icons change color on hover like your buttons */
+.profile-socials a {
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.profile-socials a:hover {
+    transform: translateY(-2px);
+    color: light-dark(var(--light-accent), var(--dark-accent));
 }
