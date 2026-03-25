@@ -129,42 +129,45 @@ a {
         margin-bottom: 2rem;
     }
 }
+/* The Grid Container */
+.project-grid {
+    display: grid;
+    /* This creates as many columns as fit, with a minimum width of 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Space between cards */
+    padding: 20px 0;
+}
+
 .project-shadow {
     border: 1px solid var(--dark-border);
     border-radius: 25px;
-    background-color: light-dark(var(--light-box),var(--dark-box));
+    background-color: light-dark(var(--light-box), var(--dark-box));
     box-shadow: black 1px 1px;
+    display: flex; /* Ensures the box inside fills the height */
 }
+
 .project-box {
-    margin: 5%;
-    border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
+    padding: 15px;
     display: flex;
+    flex-direction: column; /* Stack image on top of text for the grid look */
+    width: 100%;
 }
+
 #project-box-image {
-    border-right: 3px solid light-dark(var(--light-accent),var(--dark-accent));
-    margin-right: 5px;
+    /* Remove the right border since it's now top-to-bottom */
+    border-bottom: 3px solid light-dark(var(--light-accent), var(--dark-accent));
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0; /* Optional: rounds top corners of image */
 }
+
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .project-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 10px;
-    }
-
-    #project-box-image {
-        border-right: none; 
-        border-bottom: 3px solid light-dark(var(--light-accent),var(--dark-accent));
-        margin-right: 0;
-        margin-bottom: 15px;   
-        width: 100%;
-        height: auto;
-    }
-
-    .project-button {
-        width: 45%;
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
         padding: 10px;
-        margin-top: 10px;
     }
 }
 /* Container to handle button placement */
