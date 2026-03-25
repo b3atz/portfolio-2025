@@ -13,6 +13,9 @@ image = "portfolio.jpg"
 desc="CarBNB is software that would allow for users to temporally rent privately owned car chargers. This network would connect charger owners and electric car owners"
 
 repoLink="https://github.com/b3atz/portfolio-2025"
+
+demoLink="https://www.youtube.co/watch?v=xOoj4kk-Qec"
+
 +++
 # Carbnb
 

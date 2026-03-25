@@ -1,8 +1,3 @@
-/* 
-    Temp color:
-    TODO Improve css
-*/
-
 :root {
     color-scheme: light dark;
     --light-bg: #eafafb;
@@ -35,6 +30,9 @@ a {
     text-decoration:underline;
     text-decoration-color: light-dark(var(--light-accent),var(--dark-accent));
     color: light-dark(var(--light-color),var(--dark-color));
+}
+.projectIcon a{
+    text-decoration: none;
 }
 .nav-links {
     list-style-type: none;
